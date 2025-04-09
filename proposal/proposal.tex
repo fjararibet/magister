@@ -1,0 +1,74 @@
+\documentclass[submission]{eptcs}
+\setlength{\parindent}{0pt}
+\providecommand{\event}{} % Name of the event you are submitting to
+
+\title{Solid Construction from Surfaces}
+\author{ Felipe Jara
+\institute{Department of Computer Science\\
+University of Chile\\
+Santiago, Chile}
+\email{fjararibet@gmail.com}
+}
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+Esto se basa en el trabajo de Xaver Klemenschits, quien en su disertación habla sobre la simulación de microelectrónica, como los transistores. En su implementación de este trabajo, el borde del material se representa con una nube de puntos y, por lo tanto, no se puede triangular. El objetivo de esta tesis es crear un algoritmo que dado una superficie y su volumen correspondiente, se genere un poliedro mallable.
+
+\section{Related work}
+
+
+
+\subsection{ Estrategia  A}
+
+
+
+
+\subsection{ Estrategia B}
+
+
+\section{Problem}
+
+El problema de esta tesis es generar una representación poliedral mallable a partir de una superficie y su volumen, cuando el borde del material está definido por una nube de puntos y no puede triangularse directamente. Al no haber una estructura de malla clara, los métodos tradicionales de triangulación no se pueden aplicar, lo que dificulta la creación de un modelo geométrico útil para simulaciones en microelectrónica. Por eso, es necesario desarrollar un algoritmo que convierta esta nube de puntos en un poliedro bien definido, manteniendo la forma y las propiedades del material para su correcta manipulación y análisis.
+
+\section{Research questions}
+
+\begin{itemize}
+    \item ¿Se puede crear un algoritmo para reconstruir poliedros de múltiples materiales desde superficies?
+    \item ¿Se puede simplificar los poliedros manteniendo características?
+    \item ¿Se pueden generar mallas de calidad?
+\end{itemize}
+
+
+\section{Hypothesis}
+
+Si se desarrolla un algoritmo que convierta una nube de puntos representando el borde de un material en un poliedro estructurado, entonces será posible generar una representación geométrica adecuada que conserve la forma y propiedades del material, permitiendo su manipulación y uso en simulaciones de microelectrónica.
+
+\section{Main Goal}
+
+
+\section{Specific goals}
+
+\begin{itemize}
+\item goal 1
+\end{itemize}
+
+\section{Methodology}
+
+\subsection{Método Bidimensional}
+\begin{enumerate}
+    \item Unir nube de puntos en polilínea.
+    \item Cerrar polilínea usando el sólido original.
+    \item Simplificar polígono sacando puntos colineales o casi colineales.
+\end{enumerate}
+\subsection{Método Trisimensional}
+
+\section{Expected results}
+
+ y contribuciones
+
+\nocite{*}
+\bibliographystyle{eptcs}
+\bibliography{generic}
+\end{document}
