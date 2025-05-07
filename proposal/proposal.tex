@@ -41,12 +41,12 @@ Techonology computer aided designed, commonly referred to as TCAD, is the electr
 
 \section{Problem}
 
-Since the representation of surfaces is done with the level set method with the \theta function defined in a grid, surfaces are represented with only points, which by themselves cannot be meshed. Simple algorithms can be used to generate a polygon with these points, but the level set representation makes it so there's a lot of points, so quality meshes can't be made. Points deemed redundant to describe the surface could be removed to make a better mesh, but a criteria needs to be decided to select redundant points and remove them without losing the material's characteristics, meaning we can retrieve the original material from the newly generated mesh.
+The representation of surfaces in ViennaPS is performed using the level set method, where the material interface is described as the zero level set of the signed distance function, which returns the shortest distance to the surface, defined over a regular grid. This representation results in a dense collection of surface points with no explicit connectivity, making direct meshing infeasible. While simple polygonization algorithms can generate meshes from these points, they often yield low-quality meshes due to the sheer number of redundant points and lack of surface structure.
 
-[Bad quality mesh pic]
-[Good quality mesh pic example]
+To enable high-quality meshing, redundant points must be identified and removed without compromising the fidelity of the material interface. This requires developing a criterion for redundancy that ensures key geometric and topological properties of the original material M are preserved. These may include curvature, sharp features, connectivity, and multi-region boundaries.
 
-The goal of this thesis is to develop an algorithm that takes the level set surface output of ViennaPS and produces a simplified, high-quality polygon mesh that preserves the material boundaries and characteristics of the original model M.
+The goal of this thesis is to develop and evaluate an algorithm that converts the level set surface output from ViennaPS into a high-quality polygon mesh, optimized for simulation and visualization purposes, while ensuring the recoverability of material properties from the simplified representation.
+
 \section{Research questions}
 
 \begin{itemize}
