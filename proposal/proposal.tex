@@ -24,6 +24,9 @@ Techonology computer aided designed, commonly referred to as TCAD, is the electr
 
 ~What Vienna does wrong and what this thesis will talk about
 
+~Why meshing is important
+
+
 \section{Related work}
 
 
@@ -38,8 +41,12 @@ Techonology computer aided designed, commonly referred to as TCAD, is the electr
 
 \section{Problem}
 
-El problema de esta tesis es generar una representación poliedral mallable a partir de una superficie y su volumen, cuando el borde del material está definido por una nube de puntos y no puede triangularse directamente. Al no haber una estructura de malla clara, los métodos tradicionales de triangulación no se pueden aplicar, lo que dificulta la creación de un modelo geométrico útil para simulaciones en microelectrónica. Por eso, es necesario desarrollar un algoritmo que convierta esta nube de puntos en un poliedro bien definido, manteniendo la forma y las propiedades del material para su correcta manipulación y análisis.
+Since the representation of surfaces is done with the level set method with the \theta function defined in a grid, surfaces are represented with only points, which by themselves cannot be meshed. Simple algorithms can be used to generate a polygon with these points, but the level set representation makes it so there's a lot of points, so quality meshes can't be made. Points deemed redundant to describe the surface could be removed to make a better mesh, but a criteria needs to be decided to select redundant points and remove them without losing the material's characteristics, meaning we can retrieve the original material from the newly generated mesh.
 
+[Bad quality mesh pic]
+[Good quality mesh pic example]
+
+The goal of this thesis is to develop an algorithm that takes the level set surface output of ViennaPS and produces a simplified, high-quality polygon mesh that preserves the material boundaries and characteristics of the original model M.
 \section{Research questions}
 
 \begin{itemize}
